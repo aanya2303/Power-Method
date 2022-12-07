@@ -43,3 +43,49 @@ Therefore, the power method converges to calculates the dominating eigenvalue.
 Some observations:
 1. The rate of convergence is linear
 2. The rate depends on $\big |\frac{\lambda_2}{\lambda_1} \big|$
+
+## Pseudocode
+### Basic Power Iteration
+```
+def basic_PI(A):
+  n, _ = shape(A)
+  x_prev = random((n, 1))
+  for i in range(threshold_value):
+    x = A @ x_prev
+    eig = x / x_prev
+    x_prev = x
+  return eig
+```
+
+### Normalized Power Iteration
+The basic power method seen above involves many multiplications. With very small or very large values in the matrix $A$, it could quickly descend into an overflow or an underflow. To prevent this, a modified version of the power method normalizes the vector at each iteration. The value that converges to the eigenvalue is the norm. This is called Normalized Power Iteration.
+
+```
+def normalized_PI(A):
+  n, _ = shape(A)
+  x_prev = random((n, 1))
+  for i in range(threshold_value):
+    x = A @ x_prev
+    norm_x = norm(x)
+    x_prev = x / norm_x
+  return norm
+```
+### Inverse Power Iteration
+In the case that one requires the smallest magnitude eigenvalue instead of the largest, the fact that 
+$$eigenvalue(A^{-1}) = 1 / eigenvalue(A) $$
+Hence, in order to obtain the smallest magnitude eigenvalue, we perform inverse power iteration, which is power iteration with the inversed input matrix.
+
+```
+def inverse_PI(A):
+  n, _ = shape(A)
+  x_prev = random((n, 1))
+  A_inv = inverse(A)
+  for i in range(threshold_value):
+    x = A_inv @ x_prev
+    norm_x = norm(x)
+    x_prev = x / norm_x
+  return 1 / norm
+```
+**Note:** Instead of calculating the inverse (which is an expensive operation), one can find $x$ by solving the linear system $Ax = b$ using any more efficient method of choice.
+
+### Shifted Power Iteration
