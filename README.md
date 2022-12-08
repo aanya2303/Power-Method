@@ -102,3 +102,9 @@ The rate of convergence of the power method is linear and is proportional to  $\
 The cost associated with the power method are as follows:
 1. General/Normalized power method: $kn^2$
 2. Inverse power method: $n^3 + kn^2$
+## Applications
+Though a slow-to-converge algorithm, the power method has many real-world use-cases and applications. It performs exceedingly well in eigenvalue problems with sparse matrices. Some of the notable applications of the power method are:
+1. Calculating page rank in search engines (Google)
+2. Showing follower recommendations to users (Twitter)
+3. Calculating the classical dynamics of blocks on an inclined plane 
+4. Useful in solving Network Markov Chain problem
