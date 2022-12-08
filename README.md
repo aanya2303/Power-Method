@@ -8,13 +8,13 @@ Title: The Power Method: A comprehensive overview
 ----
 ```
 ## What is Power Method
-Power Iteration or Power Method is an eigenvalue problem, that, when given a diagonalizabale matrix $A$, outputs the dominant eigenvalue of $A$. (Power iteration 2022)
+Power Iteration or Power Method is an eigenvalue problem, that, when given a diagonalizabale matrix $A$, outputs the dominant [eigenvalue](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) of $A$. (Power iteration 2022)
 
 Given eigenvalues $\lambda_1, \lambda_2, \lambda_3, \ldots \lambda_n$ of an $n\times n$ matrix $A$, $\lambda_1$ is said to be the dominant eigenvalue if it satisfies the following conditions:
 $$|\lambda_1| > |\lambda_i| $$ for all $i = 1, 2, 3, \ldots n$ (10.3 Power Method for Approximating Eigenvalues - Universidad de Granada)
 
 In order to perform power iteration on a matrix, the following conditions must be satisfied:
-1. Matrix must be diagonalizable
+1. Matrix must be [diagonalizable](https://en.wikipedia.org/wiki/Diagonalizable_matrix)
 2. Matrix must posses a single dominant eigenvalue
 3. There must be a randomly chosen non-zero initial vector whose entries $\in R$
 
@@ -44,7 +44,7 @@ Therefore, the power method converges to calculates the dominating eigenvalue.
 
 
 Some observations:
-1. The rate of convergence is linear
+1. The [rate of convergence](https://en.wikipedia.org/wiki/Rate_of_convergence) is linear
 2. The rate depends on $\big |\frac{\lambda_2}{\lambda_1} \big|$
 
 ## Pseudocode
@@ -62,7 +62,7 @@ def basic_PI(A):
 (Heath, 2009)
 
 ### Normalized Power Iteration
-The basic power method seen above involves many multiplications. With very small or very large values in the matrix $A$, it could quickly descend into an overflow or an underflow. To prevent this, a modified version of the power method normalizes the vector at each iteration. The value that converges to the eigenvalue is the norm. This is called Normalized Power Iteration.
+The basic power method seen above involves many multiplications. With very small or very large values in the matrix $A$, it could quickly descend into an [overflow or an underflow](https://www.baeldung.com/java-overflow-underflow#:~:text=Simply%20put%2C%20overflow%20and%20underflow,small%2C%20we%20call%20it%20underflow.). To prevent this, a modified version of the power method normalizes the vector at each iteration. The value that converges to the eigenvalue is the norm. This is called Normalized Power Iteration.
 
 ```
 def normalized_PI(A):
@@ -112,14 +112,15 @@ The rate of convergence of the power method is linear and is proportional to  $\
 The cost associated with the power method are as follows:
 1. General/Normalized power method: $kn^2$
 2. Inverse power method: $n^3 + kn^2$
+
 (Silva)
 
 ## Applications
-Though a slow-to-converge algorithm, the power method has many real-world use-cases and applications. It performs exceedingly well in eigenvalue problems with sparse matrices. Some of the notable applications of the power method are:
-1. Calculating page rank in search engines (Google)
+Though a slow-to-converge algorithm, the power method has many real-world use-cases and applications. It performs exceedingly well in eigenvalue problems with [sparse matrices](https://en.wikipedia.org/wiki/Sparse_matrix). Some of the notable applications of the power method are:
+1. Calculating [page rank](https://en.wikipedia.org/wiki/PageRank) in search engines (Google)
 2. Showing follower recommendations to users (Twitter)
 3. Calculating the classical dynamics of blocks on an inclined plane 
-4. Useful in solving Network Markov Chain problem
+4. Useful in solving [Network Markov Chain](https://en.wikipedia.org/wiki/Markov_chain) problem
 
 (Power iteration 2022), (Panza, 2018)
 
