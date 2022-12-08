@@ -108,3 +108,9 @@ Though a slow-to-converge algorithm, the power method has many real-world use-ca
 2. Showing follower recommendations to users (Twitter)
 3. Calculating the classical dynamics of blocks on an inclined plane 
 4. Useful in solving Network Markov Chain problem
+
+## Drawbacks
+1. For a given real matrix and starting vector it is possible that power iteration can never converge to a complex vector
+2. Without normalization, values can either overflow or underflow due to repeated multiplications
+3. If starting guess $x_0$ does not have a component in the eigenvector, then the algorithm may not converge (this is unlikely when choosing a random starting vector)
+4. If there are two or more largest magnitude vectors that differ in signs when not considered in absolute values, then the algorithm will not converge
