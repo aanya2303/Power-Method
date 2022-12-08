@@ -89,3 +89,16 @@ def inverse_PI(A):
 **Note:** Instead of calculating the inverse (which is an expensive operation), one can find $x$ by solving the linear system $Ax = b$ using any more efficient method of choice.
 
 ### Shifted Power Iteration
+Variations of power iteration to find the largest and smallest eigenvalues have been shown above. In the case that we need all eigenvalues of a matrix, we can employ the shifted power method. The idea is to shift the input matrix $A$ by its largest eigenvalue $\sigma$ and then perform regular power iteration. It performs on the following recurrence relation:
+$$(A-\sigma I)x_{k+1} = x_k$$
+This process of shifting and then performing the power method can be repeated many times to get all the eigenvalues of the matrix $A$.
+
+## Cost and Rate of Convergence
+
+The rate of convergence of the power method is linear and is proportional to  $\big |\frac{\lambda_2}{\lambda_1} \big|$. This can be observed with an 'Error vs. Iterations' graph:
+
+![](images.png)
+
+The cost associated with the power method are as follows:
+1. General/Normalized power method: $kn^2$
+2. Inverse power method: $n^3 + kn^2$
