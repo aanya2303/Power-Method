@@ -44,7 +44,7 @@ Therefore, the power method converges to calculates the dominating eigenvalue.
 
 
 Some observations:
-1. The [rate of convergence](https://en.wikipedia.org/wiki/Rate_of_convergence) is linear
+1. The [rate of convergence](https://en.wikipedia.org/wiki/Rate_of_convergence) is linear (See [Cost and Rate of Convergence](##Cost-and-Rate-of-Convergence))
 2. The rate depends on $\big |\frac{\lambda_2}{\lambda_1} \big|$
 
 ## Pseudocode
@@ -62,7 +62,7 @@ def basic_PI(A):
 (Heath, 2009)
 
 ### Normalized Power Iteration
-The basic power method seen above involves many multiplications. With very small or very large values in the matrix $A$, it could quickly descend into an [overflow or an underflow](https://www.baeldung.com/java-overflow-underflow#:~:text=Simply%20put%2C%20overflow%20and%20underflow,small%2C%20we%20call%20it%20underflow.). To prevent this, a modified version of the power method normalizes the vector at each iteration. The value that converges to the eigenvalue is the norm. This is called Normalized Power Iteration.
+The basic power method seen above involves many multiplications. With very small or very large values in the matrix $A$, it could quickly descend into an [overflow or an underflow](https://www.baeldung.com/java-overflow-underflow#:~:text=Simply%20put%2C%20overflow%20and%20underflow,small%2C%20we%20call%20it%20underflow.) (See [Drawbacks](#Drawbacks)). To prevent this, a modified version of the power method normalizes the vector at each iteration. The value that converges to the eigenvalue is the norm. This is called Normalized Power Iteration.
 
 ```
 def normalized_PI(A):
