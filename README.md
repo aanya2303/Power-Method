@@ -8,10 +8,10 @@ Title: The Power Method: A comprehensive overview
 ----
 ```
 ## What is Power Method
-Power Iteration or Power Method is an eigenvalue problem, that, when given a diagonalizabale matrix $A$, outputs the dominant eigenvalue of $A$. [source wiki here]
+Power Iteration or Power Method is an eigenvalue problem, that, when given a diagonalizabale matrix $A$, outputs the dominant eigenvalue of $A$. (Power iteration 2022)
 
 Given eigenvalues $\lambda_1, \lambda_2, \lambda_3, \ldots \lambda_n$ of an $n\times n$ matrix $A$, $\lambda_1$ is said to be the dominant eigenvalue if it satisfies the following conditions:
-$$|\lambda_1| > |\lambda_i| $$ for all $i = 1, 2, 3, \ldots n$ [source here]
+$$|\lambda_1| > |\lambda_i| $$ for all $i = 1, 2, 3, \ldots n$ (10.3 Power Method for Approximating Eigenvalues - Universidad de Granada)
 
 In order to perform power iteration on a matrix, the following conditions must be satisfied:
 1. Matrix must be diagonalizable
@@ -21,7 +21,7 @@ In order to perform power iteration on a matrix, the following conditions must b
 Power method is an iterative process that works on the following recurrence relation (given the aforementioned conditions): 
 $$x_k = A\times x_{k-1} $$ 
 
-[source here]
+(Heath, 2009)
 
 ## Proof of Power Method's convergence
 It is known that the eigenvectors of a matrix form a basis using values $c_1, c_2, c_3, \ldots c_n$ that satisfy:
@@ -40,6 +40,9 @@ $$x_k \rightarrow c_1 v_1 \lambda_1^k \text{$\quad$as$\quad$    } k \rightarrow 
 
 Therefore, the power method converges to calculates the dominating eigenvalue. 
 
+(Wong), (Jones, 2020), (Silva)
+
+
 Some observations:
 1. The rate of convergence is linear
 2. The rate depends on $\big |\frac{\lambda_2}{\lambda_1} \big|$
@@ -56,6 +59,7 @@ def basic_PI(A):
     x_prev = x
   return eig
 ```
+(Heath, 2009)
 
 ### Normalized Power Iteration
 The basic power method seen above involves many multiplications. With very small or very large values in the matrix $A$, it could quickly descend into an overflow or an underflow. To prevent this, a modified version of the power method normalizes the vector at each iteration. The value that converges to the eigenvalue is the norm. This is called Normalized Power Iteration.
@@ -70,6 +74,8 @@ def normalized_PI(A):
     x_prev = x / norm_x
   return norm
 ```
+(Heath, 2009)
+
 ### Inverse Power Iteration
 In the case that one requires the smallest magnitude eigenvalue instead of the largest, the fact that 
 $$eigenvalue(A^{-1}) = 1 / eigenvalue(A) $$
@@ -86,12 +92,16 @@ def inverse_PI(A):
     x_prev = x / norm_x
   return 1 / norm
 ```
+(Heath, 2009)
+
 **Note:** Instead of calculating the inverse (which is an expensive operation), one can find $x$ by solving the linear system $Ax = b$ using any more efficient method of choice.
 
 ### Shifted Power Iteration
 Variations of power iteration to find the largest and smallest eigenvalues have been shown above. In the case that we need all eigenvalues of a matrix, we can employ the shifted power method. The idea is to shift the input matrix $A$ by its largest eigenvalue $\sigma$ and then perform regular power iteration. It performs on the following recurrence relation:
 $$(A-\sigma I)x_{k+1} = x_k$$
 This process of shifting and then performing the power method can be repeated many times to get all the eigenvalues of the matrix $A$.
+
+(Kong et al., 2021)
 
 ## Cost and Rate of Convergence
 
@@ -102,6 +112,8 @@ The rate of convergence of the power method is linear and is proportional to  $\
 The cost associated with the power method are as follows:
 1. General/Normalized power method: $kn^2$
 2. Inverse power method: $n^3 + kn^2$
+(Silva)
+
 ## Applications
 Though a slow-to-converge algorithm, the power method has many real-world use-cases and applications. It performs exceedingly well in eigenvalue problems with sparse matrices. Some of the notable applications of the power method are:
 1. Calculating page rank in search engines (Google)
@@ -109,11 +121,15 @@ Though a slow-to-converge algorithm, the power method has many real-world use-ca
 3. Calculating the classical dynamics of blocks on an inclined plane 
 4. Useful in solving Network Markov Chain problem
 
+(Power iteration 2022), (Panza, 2018)
+
 ## Drawbacks
 1. For a given real matrix and starting vector it is possible that power iteration can never converge to a complex vector
 2. Without normalization, values can either overflow or underflow due to repeated multiplications
 3. If starting guess $x_0$ does not have a component in the eigenvector, then the algorithm may not converge (this is unlikely when choosing a random starting vector)
 4. If there are two or more largest magnitude vectors that differ in signs when not considered in absolute values, then the algorithm will not converge
+
+(Silva), (Heath, 2009)
 
 ## Citations
 1. 10.3 Power Method for Approximating Eigenvalues - Universidad de Granada. (n.d.). Retrieved December 6, 2022, from https://ergodic.ugr.es/cphys/lecciones/fortran/power_method.pdf
