@@ -114,3 +114,14 @@ Though a slow-to-converge algorithm, the power method has many real-world use-ca
 2. Without normalization, values can either overflow or underflow due to repeated multiplications
 3. If starting guess $x_0$ does not have a component in the eigenvector, then the algorithm may not converge (this is unlikely when choosing a random starting vector)
 4. If there are two or more largest magnitude vectors that differ in signs when not considered in absolute values, then the algorithm will not converge
+
+## Citations
+1. 10.3 Power Method for Approximating Eigenvalues - Universidad de Granada. (n.d.). Retrieved December 6, 2022, from https://ergodic.ugr.es/cphys/lecciones/fortran/power_method.pdf
+2. Heath, M. T. (2009). Scientific Computing: An Introductory Survey. McGraw Hill.
+3. Kong, Q., Siauw, T., & Bayen, A. M. (2021). Eigenvalues and Eigenvectors. In Python programming and numerical methods: A guide for engineers and scientists. essay, Academic Press, an imprint of Elsevier.
+4. Panza, Michael. (2018). Application of Power Method and Dominant Eigenvector/Eigenvalue Concept for Approximate Eigenspace Solutions to Mechanical Engineering Algebraic Systems. American Journal of Mechanical Engineering. 6. 98-113. 10.12691/ajme-6-3-3. 
+5. Silva, M. (n.d.). Eigenvalues and Eigenvectors - University of Illinois at Urbana-Champaign. Retrieved December 6, 2022, from https://courses.engr.illinois.edu/cs357/fa2021/assets/lectures/complete-slides/12-Eigenvalues.pdf
+6. Silva, M. (n.d.). Eigenvalues and eigenvectors. Eigenvalues and Eigenvectors - CS 357. Retrieved December 5, 2022, from https://courses.engr.illinois.edu/cs357/fa2022/notes/ref-12-eigen.html
+7. Wikimedia Foundation. (2022, October 18). Power iteration. Wikipedia. Retrieved December 4, 2022, from https://en.wikipedia.org/wiki/Power_iteration
+8. Wong, J. (n.d.). Math 361s lecture Notes finding eigenvalues: The power method. Retrieved December 6, 2022, from https://services.math.duke.edu/~jtwong/math361-2019/lectures/Lec10eigenvalues.pdf
+9. YouTube. (2020). Numerical Analysis 12.1.3 Convergence of Power Iteration. YouTube. Retrieved December 8, 2022, from https://www.youtube.com/watch?v=NtRkX73hihg. 
