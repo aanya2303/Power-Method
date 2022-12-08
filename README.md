@@ -44,7 +44,7 @@ Therefore, the power method converges to calculates the dominating eigenvalue.
 
 
 Some observations:
-1. The [rate of convergence](https://en.wikipedia.org/wiki/Rate_of_convergence) is linear (See [Cost and Rate of Convergence](##Cost-and-Rate-of-Convergence))
+1. The [rate of convergence](https://en.wikipedia.org/wiki/Rate_of_convergence) is linear (See [Cost and Rate of Convergence](##cost-and-rate-of-convergence))
 2. The rate depends on $\big |\frac{\lambda_2}{\lambda_1} \big|$
 
 ## Pseudocode
